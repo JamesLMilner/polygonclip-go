@@ -248,10 +248,10 @@
 		    iprev = inext.Prev
 		
 		    // insert nodeOne between iprev and inext
-		    inext.Prev = nodeOne
-		    nodeOne.Next = inext
-		    nodeOne.Prev = iprev
-		    iprev.Next = nodeOne
+		    inext.prev = nodeOne
+		    nodeOne.next = inext
+		    nodeOne.prev = iprev
+		    iprev.next = nodeOne
 		
 		    // find insertion between hereTwo and next2, based on dist
 		    inext = hereTwo.Next
@@ -289,11 +289,11 @@
 	    
 	    for isect != rootOne {
 	    
-	      if isect.Intersection && !isect.Processed {  
+	      if isect.intersection && !isect.processed {  
 		    break 
 		  }
 		  
-	      isect = isect.Next
+	      isect = isect.next
 	      
 	    } 
 	    
@@ -308,7 +308,7 @@
 	    
 	    var here = isect
 	    
-	    for !here.Processed {
+	    for !here.processed {
 	    
 	      // mark intersection as processed
 	      here.Processed = true
@@ -318,7 +318,7 @@
 	      
 	      for !here.Intersection {
 	      
-		    append(clipped, here.Point)
+		    append(clipped, here.point)
 		    
 		    if moveForward {
 		    
